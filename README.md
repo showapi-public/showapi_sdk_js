@@ -1,10 +1,10 @@
->> 注: 该sdk内部使用jquery以及Promise
- 对于基本数据类型, 例如字符串(包括base64),可以在实例化时,通过option一次性传入, 也可以用addTextPara方法一个个传入,
- 对于文件对象, 仅能使用addFilePara传入
+> 1. 注: 该sdk内部使用jquery以及Promise; 
+ > 2. 对于基本数据类型, 例如字符串(包括base64),可以在实例化时,通过option一次性传入, 也可以用addTextPara方法一个个传入,
+ >3. 对于文件对象, 仅能使用addFilePara传入
 
 ## 食用方式
 ```javascript
-const instance = new jsSDK(options)
+const instance = new jsSDK(option)
 instance.post()
   .done(res){console.log(res)}
   .fail(err){console.log(err)}
@@ -27,10 +27,10 @@ instance.post()
 
 | 方法名 | 说明| 参数
 |  -- | -- | -- | -- |
-| addTextPara | 向option对象中添加非文件类型的值| name,value
-| addFilePara | 向option对象中添加文件类型的值, 文件上传只能通过调用addFilePara方法传入, 尝试在option中传入是无效的| name,value
-| fileToBase64 | 这是一个异步操作, 具体使用方式请查看demo, | file对象
-| post | 以post的方法,发送options到指定的url地址,依赖jquery;返回jquery的defer对象,  | 接受一个对象,用于ajax,比如设置超时: post({timeout:2000})
+| addTextPara | 向option对象中添加非文件类型的值| 第一个参数:参数名,第二个参数: 参数值
+| addFilePara | 向option对象中添加文件类型的值, 文件上传只能通过调用addFilePara方法传入, 尝试在option中传入是无效的| 第一个参数:参数名,第二个参数: 参数值
+| fileToBase64 | 这是一个异步操作, 具体使用方式请查看demo, | file对象(比如input[type=file].files[0])
+| post | 以post的方法,发送options到指定的url地址,依赖jquery;返回jquery的defer对象,  | 接受一个对象,用于配置ajax,比如设置超时: post({timeout:2000})
 
 ## 在线demo
 
