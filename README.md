@@ -26,7 +26,7 @@ instance.post()
 ### 实例方法
 
 | 方法名 | 说明| 参数
-|  -- | -- | -- | -- |
+|  -- | -- | -- |
 | addTextPara | 向option对象中添加非文件类型的请求参数| 第一个参数:参数名,第二个参数: 参数值|
 | addFilePara | 向option对象中添加文件类型的请求参数, 文件上传只能通过调用addFilePara方法传入, 尝试在option中传入是无效的| 第一个参数:参数名,第二个参数: 参数值|
 | fileToBase64 | 这是一个异步操作, 具体使用方式请查看demo, | file对象(比如input[type=file].files[0])|
